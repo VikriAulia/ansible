@@ -1,0 +1,11 @@
+dev:
+  hosts:
+   dev01:
+    ansible_host: 10.1.1.7
+  vars:
+    ansible_user: vikriaulia
+
+prod:
+  hosts:
+    aset:
+      ansible_host: 10.1.1.6
