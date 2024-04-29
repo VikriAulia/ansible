@@ -1,6 +1,6 @@
 ---
 - name: Playbook without Vault
-  hosts: all
+  hosts: localhost
   vars:
     mypassword: iniadalahsuperahasia
   tasks:

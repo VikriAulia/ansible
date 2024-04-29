@@ -1,6 +1,6 @@
 ---
 - name: Playbook without Vault
-  hosts: all
+  hosts: localhost
   tasks:
     - name: include vault
       ansible.builtin.include_vars:
@@ -8,4 +8,4 @@
         
     - name: print variable
       ansible.builtin.debug:
-        var: mypassword
+        var: devsshpass
