@@ -1,0 +1,17 @@
+---
+- name: Install speedtest and run speedtest
+  hosts: all
+  become: yes
+  tasks:
+    - name: Install speedtest using apt
+      apt:
+        name: speedtest-cli
+        state: present
+
+    - name: Run speedtest command
+      shell: speedtest
+      register: speedtest_output
+
+    - name: Display speedtest results
+      debug:
+        var: speedtest_output.stdout_lines
