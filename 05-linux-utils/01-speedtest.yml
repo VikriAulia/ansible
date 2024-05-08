@@ -1,6 +1,6 @@
 ---
 - name: Install speedtest and run speedtest
-  hosts: all
+  hosts: linux
   become: yes
   tasks:
     - name: Install speedtest using apt

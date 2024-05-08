@@ -1,7 +1,5 @@
 webservers:
   hosts:
-    windows01:
-      ansible_host: 10.1.1.2
     deb01:
       ansible_host: 10.1.1.3
     docker01:
@@ -23,13 +21,17 @@ development:
           61626336376663373037663166383632346138643239653664353735343831363033353130623766
           3736643636393330390a653839356162346539363931663338366434303736393561663934643564
           3034
-    ansible_pass: devproxmox
+    ansible_password: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          39303430393533616565343639663430393438636332333334396533363066663538313564613664
+          6561386132316637633839613934393164386463333837330a313165636333336336623231373261
+          61383734366163646463336265613466663630343333333630646630353430386630343039383333
+          3432376233316334340a383739623539343863343432396232623137343830633461313866663763
+          6235
     ansible_become_password: devproxmox
 
 production:
   hosts:
-    windows01:
-      ansible_host: 10.1.1.2
     deb01:
       ansible_host: 10.1.1.3
     docker01:
@@ -37,8 +39,15 @@ production:
     asset01: 
       ansible_host: 10.1.1.6
 
+proxmox01:
+  hosts:
+    proxmox01:
+      ansible_host: 10.1.1.2
+
 linux:
   hosts:
+    proxmox01:
+      ansible_host: 10.1.1.2
     deb01:
       ansible_host: 10.1.1.3
     docker01:
